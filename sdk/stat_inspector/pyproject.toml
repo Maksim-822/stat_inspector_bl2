@@ -1,0 +1,18 @@
+[project]
+name = "stat_inspector"
+version = "0.4.0"
+authors = [{ name = "smarkls" }]
+description = """\
+Shows the player's final stat values as computed by the game, and the buffs behind them.
+
+F6 cycles: off / values / values + sources.\
+"""
+dependencies = ["willow2_mod_manager>=3.8"]
+
+# Read by mods_base.build_mod (mod_factory.py, mods_base 1.12): name, version, auto_enable,
+# mod_type, supported_games (list of Game member names), coop_support (CoopSupport member name).
+# Values are case sensitive; unknown names are silently ignored.
+[tool.sdkmod]
+name = "Stat Inspector"
+coop_support = "ClientSide"
+supported_games = ["BL2"]

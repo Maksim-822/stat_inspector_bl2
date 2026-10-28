@@ -3,16 +3,33 @@ name = "stat_inspector"
 version = "0.4.0"
 authors = [{ name = "smarkls" }]
 description = """\
-Shows the player's final stat values as computed by the game, and the buffs behind them.
+Shows your real, final stats, the numbers the game itself calculated, and every buff behind \
+them: skills, class mods, relics, shields, weapon effects, Badass Rank and UVHM.
 
-F6 cycles: off / values / values + sources.\
+F6 cycles the panel: off / values / values + sources.
+
+- 140+ stats: weapon damage, fire rate, reload, magazine, accuracy, crit damage, gun / melee / \
+grenade / elemental damage, elemental chance, health, shield capacity and recharge, resistances, \
+movement speed, ammo, Badass Rank bonuses.
+- Sources mode lists each stat's base and every live modifier with where it comes from; stacking \
+effects are merged with a count.
+- Real action skill cooldown for every class, and timers for the cooldown and timed buffs.
+- Self-check: values the mod can't explain are flagged instead of guessed.
+- Choose which stat groups and stats to show. Info only, never changes gameplay.\
 """
 dependencies = ["willow2_mod_manager>=3.8"]
+
+[project.urls]
+Source = "https://github.com/Maksim-822/stat_inspector_bl2"
+Releases = "https://github.com/Maksim-822/stat_inspector_bl2/releases"
 
 # Read by mods_base.build_mod (mod_factory.py, mods_base 1.12): name, version, auto_enable,
 # mod_type, supported_games (list of Game member names), coop_support (CoopSupport member name).
 # Values are case sensitive; unknown names are silently ignored.
+# `download` and `license` are read by the mod database (bl-sdk.github.io) for the mod's page.
 [tool.sdkmod]
 name = "Stat Inspector"
 coop_support = "ClientSide"
 supported_games = ["BL2"]
+download = "https://github.com/Maksim-822/stat_inspector_bl2/releases/latest/download/stat_inspector.sdkmod"
+license = { name = "MIT", url = "https://opensource.org/license/mit" }
